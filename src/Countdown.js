@@ -1,13 +1,15 @@
 // Countdown.js
 import React, { useState, useEffect } from 'react';
+import {endDate} from './GlobalVariablesContext';
 
 const Countdown = () => {
     const [countdown, setCountdown] = useState('');
     
     useEffect(() => {
       // Set your target date here
-      const targetDate = new Date('2024-03-13T12:00:00').getTime();
-  
+      // const targetDate = new Date('2024-03-13T12:00:00').getTime();
+      const targetDate = endDate;
+
       const interval = setInterval(() => {
         const now = new Date().getTime();
         const distance = targetDate - now;
